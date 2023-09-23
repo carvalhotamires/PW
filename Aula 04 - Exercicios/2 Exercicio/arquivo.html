@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculo de Comissao</title>
+    </head>
+        <body>
+            <h1>Calculo de Comissao</h1>
+            <form action="calcular_comissao.php" method="GET">
+                <label for="salario_fixo">Salário Fixo:</label>
+                <input type="number" id="salario_fixo" name="salario_fixo" required><br>
+
+                <label for="valor_vendas">Valor Total de Vendas:</label>
+                <input type="number" id="valor_vendas" name="valor_vendas" step="0.01" required><br>
+
+                <input type="submit" value="Calcular Comissao">
+            </form>
+        </body>
+</html>

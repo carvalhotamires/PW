@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+    <head>
+        <title>Resultado do Calculo</title>
+    </head>
+        <body>
+            <h1>Resultado do Calculo</h1>
+
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "GET") {
+        $salario_fixo = floatval($_GET["salario_fixo"]);
+        $valor_vendas = floatval($_GET["valor_vendas"]);
+
+        $comissao = $valor_vendas * 0.04;
+        $salario_final = $salario_fixo + $comissao;
+
+        echo "<p>Salario Fixo: R$ $salario_fixo</p>";
+        echo "<p>Valor Total de Vendas: R$ $valor_vendas</p>";
+        echo "<p>Comissao (4% das vendas): R$ " . number_format($comissao, 2) . "</p>";
+        echo "<p>Salario Final: R$ " . number_format($salario_final, 2) . "</p>";
+    } else {
+        echo "<p>Erro: Este script deve ser acessado via método GET.</p>";
+    }
+    ?>
+
+    <p><a href="arquivo.html">Voltar</a></p>
+        </body>
+</html>
